@@ -1,4 +1,3 @@
-
 import Head from 'next/head';
 import { useState } from 'react';
 import ProductCard from '../components/ProductCard';
@@ -30,29 +29,29 @@ export default function Home() {
       </Head>
 
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-all">
-        {/* Top navigation */}
+        {/* 🧭 Top navigation */}
         <Header onCartClick={() => setCartOpen(!cartOpen)} />
 
-        {/* 🧩 NEW: Category Buttons */}
+        {/* 🏷️ Category filters */}
         <CategoryBar />
 
-        {/* 🧩 NEW: Hero Kit Carousel */}
+        {/* 🎞️ Hero image carousel */}
         <HeroCarousel />
 
-        {/* Products */}
+        {/* 🛍️ Product grid */}
         <main className="p-4 pt-12 max-w-7xl mx-auto grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {[...Array(8)].map((_, i) => (
             <ProductCard key={i} id={i} />
           ))}
         </main>
 
-        {/* 🧩 NEW: Testimonials */}
+        {/* ⭐ Customer reviews */}
         <Testimonials />
 
-        {/* 🧩 NEW: Newsletter Signup */}
+        {/* 📨 Newsletter signup */}
         <Newsletter />
 
-        {/* Footer and cart */}
+        {/* 🔻 Footer and cart drawer */}
         <Footer />
         <Cart open={cartOpen} onClose={() => setCartOpen(false)} />
       </div>
